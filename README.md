@@ -4,8 +4,8 @@ This program is a prototype meant to explore ways to interact with computer syst
 It's name is inspired by the way parrots and parakeets communicate, using chirps, clicks and sometimes speech. 
 
 # Software requirements
-* Windows version 7 and up.
-* Python 3.6 and up (64 bit recommended)
+* Windows version 7 and up, MacOS or Linux (X11)
+* Python 3.8 (64 bit recommended)
 * Project IRIS ( OPTIONAL - Used for turning the eyetracker into a mouse cursor )
 
 Python packages such as
@@ -19,10 +19,8 @@ Python packages such as
 * pydirectinput *( for mouse and keyboard simulation, but with DirectX keycodes instead )*
 * dragonfly2 *( For speech recognition purposes )*
 * pythoncom *( for listening to speech recognition commands )*
-* pytorch *( OPTIONAL - Used for improved neural nets )*
-* audiomentations *( OPTIONAL - Used in training for generating more samples to train on ) 
-
-All required packages can be installed using `pip3 install requirements.txt`
+* pytorch *( Used for improved neural nets )*
+* audiomentations *( Used in training for generating more samples to train on ) 
 
 # Hardware requirements
 * A decent computer to run machine learning training on
@@ -57,6 +55,11 @@ Sometimes if windows speech rec isnt started before the program, there appears t
 Exception while initializing sapi5 engine: module 'win32com.gen_py' has no attribute 'CLSIDToClassMap'
 You can fix that by starting windows speech rec, going to your C:\Users\YOURUSER\AppData\Local\Temp directory and rename gen_py to gen_py2 or something. This will rebuild the cache for gen_py the next time the program is run.
 
+# Using Parrot.PY with an On Screen Keyboard in Windows
+
+The OSK program in Windows is a special program that doesn't trust the input that this python program is outputting. So if you try clicking on the OSK buttons, it doesn't respond.
+A way to mitigate that is by running your command line program as an administrator. You can do this by searching for your command line program in the start menu, and right clicking on the option 'Run as administrator'.
+
 # Other related stuff
 
 For instructions on upgrading and the release notes, look on ![this page](docs/RELEASE_NOTES.md).
@@ -64,4 +67,5 @@ For instructions on upgrading and the release notes, look on ![this page](docs/R
 I have a seperated doc page filled with research, notes, acknowledgements and showcases over on ![this page](docs/NOTES_AND_ACKNOWLEDGEMENTS.md).
 I will expand this document once I learn more during the development. In the meantime, you can use that knowledge to your own advantage.
 
-For examples and explanation of how to interact with a running Parrot instance from your own programs like Talon Voice, read up on ![this page](docs/INTERFACING.md).
+If you desire to connect Parrot.PY to Talon Voice, take a look at ![this page](docs/TALON_VOICE.md).
+For examples and explanation of how to interact with a running Parrot instance from your own programs, read up on ![this page](docs/INTERFACING.md).
